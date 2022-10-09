@@ -1,0 +1,106 @@
+{
+  "type": "JsonObject",
+  "require": true,
+  "detail": {
+    "train_config": {
+      "model-name": {
+        "type": "String",
+        "require": true,
+        "description": "model name [resnet18, mobilenet_v2, efficientnet_b0, convnext_tiny]",
+        "default": "mobilenet_v2"
+      },
+      "serve-bentoml-name": {
+        "type": "String",
+        "require": true,
+        "description": "serve bentoml name ",
+        "default": "pytorch_flower_demo"
+      },
+      "endpoint": {
+        "type": "String",
+        "require": true,
+        "description": "name api in service.py",
+        "default": "/predict_image"
+      },
+      "pretrained-weights": {
+        "type": "String",
+        "require": true,
+        "description": "path to pretrained weights",
+        "default": ""
+      },
+      "train-data-path": {
+        "type": "String",
+        "require": true,
+        "description": "path to data",
+        "default": "data"
+      },
+      "val-data-path": {
+        "type": "String",
+        "require": true,
+        "description": "path to data",
+        "default": "data"
+      },
+      "epochs": {
+        "type": "Integer",
+        "require": true,
+        "description": "number of epoch to train",
+        "default": 25
+      },
+      "batch-size": {
+        "type": "Integer",
+        "require": true,
+        "description": "number of batch size to train",
+        "default": 16
+      },
+      "lr": {
+        "type": "float",
+        "require": true,
+        "description": "learning rate",
+        "default": 0.03
+      },
+      "num-classes": {
+        "type": "Integer",
+        "require": true,
+        "description": "num classes",
+        "default": 3
+      },
+      "freeze-layers": {
+        "type": "Boolean",
+        "require": true,
+        "description": "freeze layers",
+        "default": false
+      }
+    },
+    "predict_config": {
+      "model-name": {
+        "type": "String",
+        "require": true,
+        "description": "model name [resnet18, mobilenet_v2, efficientnet_b0, convnext_tiny]",
+        "default": "mobilenet_v2"
+      },
+      "pretrained-weights": {
+        "type": "String",
+        "require": true,
+        "description": "path to pretrained weights",
+        "default": "weights/best.pth"
+      },
+      "data-path": {
+        "type": "String",
+        "require": true,
+        "description": "path to data",
+        "default": "data"
+      },
+      "num-classes": {
+        "type": "Integer",
+        "require": true,
+        "description": "num classes",
+        "default": 3
+      },
+      "batch-size": {
+        "type": "Integer",
+        "require": true,
+        "description": "number of batch size to train",
+        "default": 16
+      }
+    }
+  }
+}

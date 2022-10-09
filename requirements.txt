@@ -1,0 +1,9 @@
+minio
+mlflow
+pillow
+torch==1.10.1
+pydantic
+torchvision
+configargparse
+request
+json

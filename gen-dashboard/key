@@ -1,0 +1,13 @@
+curl -H "Authorization: Bearer eyJrIjoiQ3BvSnVaamYydEF0UkpFV3dLQkgxRmdUZ24xWUtMREMiLCJuIjoia2luZ2tvbmciLCJpZCI6MX0=" http://localhost:3000/api/dashboards/home
+
+grafana=eyJrIjoiQ3BvSnVaamYydEF0UkpFV3dLQkgxRmdUZ24xWUtMREMiLCJuIjoia2luZ2tvbmciLCJpZCI6MX0=
+
+server 10.255.187.50
+eyJrIjoiek1wVkRRbG95TGswSndPeDhtYzY5WG05OGxRcnByckciLCJuIjoia2luZ2tvbmciLCJpZCI6MX0=
+curl -H "Authorization: Bearer eyJrIjoiek1wVkRRbG95TGswSndPeDhtYzY5WG05OGxRcnByckciLCJuIjoia2luZ2tvbmciLCJpZCI6MX0=" http://10.255.187.50:3000/api/dashboards/home
+
+
+https://grafana.com/docs/grafana/latest/developers/http_api/dashboard/
+
+# kong 
+token=eyJhbGciOiJIUzI1NiJ9.MQ.Lu-KcR4aCeuT9hi1K474zV3s4VaopLDCcf4nZvH6DQo
