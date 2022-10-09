@@ -6,4 +6,3 @@ pydantic
 torchvision
 configargparse
 requests
-json
