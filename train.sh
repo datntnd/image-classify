@@ -17,6 +17,7 @@ echo "pipeline_id: $pipeline_id";
 # export PIPELINE_ID=$pipeline_id
 # export DATASET_VERSION_ID=$dataset_id
 # export PROJECT_ID=$project_id
-unset HTTPS_PROXY HTTP_PROXY http_proxy https_proxy
-export python3=/home/anaconda3/bin/python3
-python3 train.py
+# unset HTTPS_PROXY HTTP_PROXY http_proxy https_proxy
+# export python3=/home/anaconda3/bin/python3
+
+/home/anaconda3/bin/python3 train.py
