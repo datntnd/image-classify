@@ -19,7 +19,7 @@ export DATASET_VERSION_ID=$dataset_id
 export PROJECT_ID=$project_id
 unset HTTPS_PROXY HTTP_PROXY http_proxy https_proxy
 
-export python3=/home/anaconda3/bin/python3
-python3 fetch_data.py
 
-python3 get_class_json.py
+/home/anaconda3/bin/python3 pfetch_data.py
+
+/home/anaconda3/bin/python3 get_class_json.py
