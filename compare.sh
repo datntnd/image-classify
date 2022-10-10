@@ -19,4 +19,4 @@ echo "pipeline_id: $pipeline_id";
 # export PROJECT_ID=$project_id
 unset HTTPS_PROXY HTTP_PROXY http_proxy https_proxy
 
-python3 compare.py
+/home/anaconda3/bin/python3 compare.py
