@@ -183,7 +183,7 @@ def main(config):
     Path(f"weights/{config.model_name}").mkdir(parents=True, exist_ok=True)
     torch.save(model_ft.state_dict(), f"weights/{config.model_name}/best.pth")
     minioClient.fput_object(model_bucket, f"{user_id}/{project_id}/{dataset_version_id}/{pipeline_id}/best.pth", f"weights/{config.model_name}/best.pth")
-    res = requests.post("http://10.61.185.121:8089/api/v1/model/create",
+    res = requests.post("http://10.255.187.48:8089/api/v1/model/create",
     json={
         "model_name": config.model_name,
         "model_url": f"{user_id}/{project_id}/{dataset_version_id}/{pipeline_id}/best.pth",
