@@ -1,3 +1,7 @@
+If run in new project, we need change in some files: 
+- Change url minio in core/settings/development.py
+- Change mlflow url in compare.py and train.py
+
 In here, we have too many config:
 
 - File config.json have: 

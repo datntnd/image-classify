@@ -46,7 +46,7 @@ found = minioClient.bucket_exists(pipeline_bucket)
 if not found:
     minioClient.make_bucket(pipeline_bucket)
 
-mlflow.set_tracking_uri("http://10.61.185.121:5120")
+mlflow.set_tracking_uri("http://10.255.187.41:5120")
 name_experiment = f"image-classification-{user_id}-{project_id}-{pipeline_id}"
 mlflow.set_experiment(name_experiment)
 

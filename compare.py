@@ -34,7 +34,7 @@ def compare(config):
     minioClient.fput_object("pipeline",
                             f"{settings.user_id}/{settings.project_id}/{settings.dataset_version_id}/{settings.pipeline_id}/compare.json",
                             "compare.json")
-    mlflow.set_tracking_uri("http://10.61.185.121:5120")
+    mlflow.set_tracking_uri("http://10.255.187.41:5120")
     mlflow.set_experiment(f"yolov5-compare-{settings.pipeline_id}")
 
     result_1 = predict(config, weight_path=f"weights/{config.model_name}/best.pth")
