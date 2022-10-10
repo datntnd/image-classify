@@ -14,5 +14,5 @@ firewall-cmd --reload
 
 # bentoml serve service.py:svc --port $port
 echo $serving_port
-nohup /hdd/anaconda3/bin/bentoml serve service.py:svc --port $serving_port &
+nohup /home/anaconda3/bin/bentoml serve service.py:svc --port $serving_port &
 
