@@ -6,4 +6,4 @@ pydantic
 torchvision
 configargparse
 requests
-bentoml=1.0.4
+bentoml==1.0.4
