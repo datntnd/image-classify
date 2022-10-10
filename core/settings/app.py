@@ -9,7 +9,7 @@ class AppSettings(BaseAppSettings):
     max_connection_count: int = 10
     min_connection_count: int = 10
 
-    minio_endpoint: str = "10.61.185.121:9000"
+    minio_endpoint: str = "10.255.187.41:9000"
     model_name: str = "mobilenet_v2"
     minio_access_key: str = "minio"
     minio_secret_key: str = "minio123"

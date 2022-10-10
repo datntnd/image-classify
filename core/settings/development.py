@@ -8,7 +8,7 @@ lines = f.readlines()
 
 class DevAppSettings(AppSettings):
     debug: bool = True
-    minio_endpoint: str = "10.61.185.121:9000"
+    minio_endpoint: str = "10.255.187.41:9000"
     minio_access_key: str = "minio"
     minio_secret_key: str = "minio123"
     data_bucket_name: str = "upload-images"
