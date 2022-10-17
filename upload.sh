@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export GRAFANA_SERVER=10.255.187.50:8000
+export GRAFANA_API_KEY=eyJrIjoiRllHWjIyc3ZDdnpKSXcyemRqZWNjdFhHT01RZTlaUG8iLCJuIjoic2VydmVyNDgiLCJpZCI6MX0=
+
 function prop {
     grep "${1}" env|cut -d'=' -f2-
 }
@@ -50,7 +53,7 @@ logfile="grafana_upload.log"
 DASHBOARD=$1
 
 # Pull through jq to validate json
-payload="$(jq . ${DASHBOARD}) >> $logfile"
+payload="$(/home/anaconda3/bin/jq . ${DASHBOARD}) >> $logfile"
 
 # Upload the JSON to Grafana
 curl -X POST \

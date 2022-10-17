@@ -13,7 +13,11 @@ serving_host = os.environ.get("serving_host")
 serving_port = os.environ.get("serving_port")
 kong_address = settings.kong_address
 
+print(f"user_id: {user_id}")
+print(f"project_id: {project_id}")
 print(f"kong address: {kong_address}")
+print(f"serving_port: {serving_port}")
+print(f"serving_host: {serving_host}")
 
 
 # Create services
