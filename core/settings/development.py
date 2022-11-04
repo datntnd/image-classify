@@ -17,7 +17,7 @@ class DevAppSettings(AppSettings):
     project_id: str = os.environ.get("project_id")
     dataset_version_id: str = os.environ.get("dataset_version_id") if os.environ.get("project_id") else lines[1].strip()
     model_name: str = os.environ.get("model_name")
-    kong_address: str = "10.255.187.48:8001"
+    kong_address: str = "10.255.187.46:8001"
     if os.environ.get("kong_address"):
         kong_address = os.environ.get("kong_address")  
     logging_level: int = logging.DEBUG
