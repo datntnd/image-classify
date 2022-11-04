@@ -18,10 +18,10 @@ import json
 import requests
 from core.config import get_app_settings
 
-print(os.environ)
+# print(os.environ)
 
 settings = get_app_settings()
-print(settings)
+# print(settings)
 
 
 user_id = settings.user_id
@@ -60,7 +60,7 @@ def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, schedul
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
         print('-' * 10)
-
+        params = {}
         for phase in ['train', 'val']:
             if phase == 'train':
                 scheduler.step()
@@ -103,7 +103,7 @@ def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, schedul
             #     loss_train = epoch_loss
             #     acc_train = epoch_acc
 
-            if phase == 'val' and epoch_acc > best_acc:
+            if phase == 'val' and epoch_acc >= best_acc:
                 best_loss = epoch_loss
                 best_acc = epoch_acc
                 # best_val_train_loss = loss_train
