@@ -4,7 +4,16 @@ import sys, os
 sys.path.append(os.path.abspath('.'))
 import configargparse
 from Config import ConfigClassificationTrain
+from core.config import get_app_settings
+import os
 
+settings = get_app_settings()
+user_id = settings.user_id
+project_id = settings.project_id
+
+print("gen dashboard")
+print(f"user_id: {user_id}")
+print(f"project_id: {project_id}")
 
 def gen_dashboard_json(data):
     with open('gen-dashboard/template.json', 'r') as json_file:
@@ -33,10 +42,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print(f"args: {args}")
 
-    title = " ".join(config.service_name.split("_")) + "_" + args.instance
+    title = f"image_classify_{user_id}_project_id_{project_id}_{args.instance}" 
 
     data = dict(
-        name=config.service_name,
+        name=f"image_classify_{user_id}_project_id_{project_id}",
         instance=args.instance,
         endpoint=config.endpoint,
         title=title,

@@ -28,7 +28,7 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-name_service = config.service_name + "_" + user_id
+name_service = f"image_classify_{user_id}_project_id_{project_id}"
 
 payload_services=json.dumps({
   "name": name_service,

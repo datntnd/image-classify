@@ -10,9 +10,9 @@ from minio.error import S3Error
 from core.config import get_app_settings
 from predict import predict
 
-print(os.environ)
+# print(os.environ)
 settings = get_app_settings()
-print(settings)
+# print(settings)
 
 minioClient = Minio(settings.minio_endpoint,
                     access_key=settings.minio_access_key,

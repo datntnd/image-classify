@@ -11,6 +11,15 @@ from bentoml.io import Image
 from bentoml.io import NumpyNdarray
 
 from Config import ConfigClassificationTrain
+from core.config import get_app_settings
+
+settings = get_app_settings()
+user_id = settings.user_id
+project_id = settings.project_id
+
+print("Serving bentoml.py")
+print(f"user_id: {user_id}")
+print(f"project_id: {project_id}")
 
 if TYPE_CHECKING:
     from numpy.typing import NDArray
@@ -22,7 +31,7 @@ config = ConfigClassificationTrain({})
 
 runner = bentoml.pytorch.get(f"{config.model_name}:latest").to_runner()
 
-svc = bentoml.Service(name=config.service_name, runners=[runner])
+svc = bentoml.Service(name=f"image_classify_{user_id}_project_id_{project_id}", runners=[runner])
 
 
 def to_numpy(tensor):

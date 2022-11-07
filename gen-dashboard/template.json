@@ -324,7 +324,7 @@
               "uid": "rkVmXFGVz"
             },
             "editorMode": "builder",
-            "expr": "BENTOML_pytorch_flower_demo_request_in_progress{instance=\"${instance}\", endpoint=\"${endpoint}\"}",
+            "expr": "BENTOML_${name}_request_in_progress{instance=\"${instance}\", endpoint=\"${endpoint}\"}",
             "legendFormat": "request",
             "range": true,
             "refId": "A"
