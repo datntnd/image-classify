@@ -30,7 +30,10 @@
     "liveNow": false,
     "panels": [
       {
-        "datasource": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "rkVmXFGVz"
+        },
         "description": "",
         "fieldConfig": {
           "defaults": {
@@ -150,7 +153,10 @@
         "type": "timeseries"
       },
       {
-        "datasource": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "rkVmXFGVz"
+        },
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -239,7 +245,10 @@
         "type": "timeseries"
       },
       {
-        "datasource": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "rkVmXFGVz"
+        },
         "fieldConfig": {
           "defaults": {
             "color": {
