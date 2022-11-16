@@ -12,6 +12,10 @@ from predict import predict
 
 # print(os.environ)
 settings = get_app_settings()
+user_id = settings.user_id
+project_id = settings.project_id
+dataset_version_id = settings.dataset_version_id
+pipeline_id = settings.pipeline_id
 # print(settings)
 
 minioClient = Minio(settings.minio_endpoint,
@@ -32,18 +36,22 @@ def compare(config):
     with open('compare.json', 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=4)
     minioClient.fput_object("pipeline",
-                            f"{settings.user_id}/{settings.project_id}/{settings.dataset_version_id}/{settings.pipeline_id}/compare.json",
+                            f"{user_id}/{project_id}/{dataset_version_id}/{pipeline_id}/compare.json",
                             "compare.json")
     mlflow.set_tracking_uri("http://10.255.187.41:5120")
-    mlflow.set_experiment(f"yolov5-compare-{settings.pipeline_id}")
+    name_experiment = f"image-classification-{user_id}-{project_id}-{pipeline_id}"
+    mlflow.set_experiment(name_experiment)
 
     result_1 = predict(config, weight_path=f"weights/{config.model_name}/best.pth")
+    print(f"result 1: {result_1}")
     try:
         Path("minio").mkdir(parents=True, exist_ok=True)
         minioClient.fget_object(model_bucket,
                                 f"{settings.user_id}/{settings.project_id}/{config.model_name}/best.pth",
                                 f"minio/{config.model_name}/best.pth")
         result_2 = predict(config, weight_path=f"minio/{config.model_name}/best.pth")
+        print(f"result 2: {result_2}")
+
     except S3Error:
         print("object not found")
         result_2 = result_1
