@@ -37,7 +37,7 @@ def get_data_from_minio_storage(user_id, project_id, dataset_version_id):
 
 
 if not settings.dataset_version_id:
-    response = requests.post("http://10.255.187.48:8089/api/v1/pipeline/create-pipeline",
+    response = requests.post("http://10.255.187.50:8089/api/v1/pipeline/create-pipeline",
     json={
         "project_id": int(settings.project_id),
     }, headers={"token": settings.user_id}, proxies = {
