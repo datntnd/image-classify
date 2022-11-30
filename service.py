@@ -1,14 +1,16 @@
 from __future__ import annotations
+import json
 
 import typing as t
 from typing import TYPE_CHECKING
+
+import numpy as np
 import torch
 from PIL.Image import Image as PILImage
 from torchvision import transforms
 
 import bentoml
-from bentoml.io import Image
-from bentoml.io import NumpyNdarray
+from bentoml.io import Image, NumpyNdarray
 
 from Config import ConfigClassificationTrain
 from core.config import get_app_settings
@@ -38,7 +40,7 @@ def to_numpy(tensor):
     return tensor.detach().cpu().numpy()
 
 
-@svc.api(input=Image(), output=NumpyNdarray(dtype="int64"))
+@svc.api(input=Image(), output=NumpyNdarray(dtype="str"))
 async def predict_image(f: PILImage) -> NDArray[t.Any]:
     assert isinstance(f, PILImage)
 
@@ -61,5 +63,14 @@ async def predict_image(f: PILImage) -> NDArray[t.Any]:
     output_tensor = await runner.async_run(input)
     print(f"output: {output_tensor}")
     _, preds = torch.max(output_tensor, 1)
+    preds = to_numpy(preds)[0]
     print(f"preds: {preds}")
-    return to_numpy(preds)
+
+    classes = json.load(open("data/classes.json"))
+    print(f"classes: {classes}")
+
+    for name, label in classes.items():
+        if label == str(preds):
+            return np.array([name])
+
+    return np.array(['test'])

@@ -191,10 +191,7 @@ def main(config):
         "pipeline_id": int(settings.pipeline_id),
         "project_id": int(settings.project_id),
         "description": ""
-    }, headers={"token": user_id}, proxies = {
-        "http_proxy": "http://10.255.188.84:3128",
-        "https_proxy": "http://10.255.188.84:3128"
-    })
+    }, headers={"token": user_id})
     print(res.json())
     # minioClient.fput_object(bucket, "weights/best.pt", "weights/best.pt")
     # minio_client.fput_object(bucket, "classes.json", "classes.json")
