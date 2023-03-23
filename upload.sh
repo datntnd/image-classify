@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export GRAFANA_SERVER=10.255.187.50:8000
-export GRAFANA_API_KEY=eyJrIjoiRllHWjIyc3ZDdnpKSXcyemRqZWNjdFhHT01RZTlaUG8iLCJuIjoic2VydmVyNDgiLCJpZCI6MX0=
+export GRAFANA_API_KEY=eyJrIjoiTmlLWGZKemFaQlZJVUJscWJDbzVIU1o2OUhadllJNWUiLCJuIjoibWxvcHMiLCJpZCI6MX0=
 
 function prop {
     grep "${1}" env|cut -d'=' -f2-
