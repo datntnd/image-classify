@@ -9,8 +9,8 @@ lines = f.readlines()
 class DevAppSettings(AppSettings):
     debug: bool = True
     minio_endpoint: str = "10.255.187.41:9000"
-    minio_access_key: str = "minio"
-    minio_secret_key: str = "minio123"
+    minio_access_key: str = "vas"
+    minio_secret_key: str = "RnDVts2023"
     data_bucket_name: str = "upload-images"
     pipeline_id: str = os.environ.get("pipeline_id") if os.environ.get("pipeline_id") else lines[0].strip()
     user_id: str = os.environ.get("user_id")
